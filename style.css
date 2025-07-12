@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+/* Header with icon inline */
+.title-with-icon {
+  display: inline-flex;       /* inline-flex to keep text and icon side by side */
+  align-items: center;
+  gap: 6px;                   /* small space between text and icon */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.magnify-icon {
+  color: #00aaff;
+  flex-shrink: 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0 20px 0;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
+
+#listBoxContainer {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  background-color: #222;
+  border-radius: 4px;
+  border: 1px solid #555;
+}
+
+#listBoxContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#listBoxContainer th,
+#listBoxContainer td {
+  padding: 8px;
+  border: 1px solid #555;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#listBoxContainer th {
+  background-color: #333;
+  color: #fff;
+}
+
+#listBoxContainer tr:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+#listBoxContainer tr.selected {
+  background-color: #0080ff;
+  color: white;
+}
+
+#selectedERP {
+  margin-top: 20px;
+  font-size: 18px;
+}

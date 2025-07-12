@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Finder</title>
+
+  <!-- PWA manifest and theme color -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0080ff" />
+
+  <!-- Favicon for browser tabs (optional) -->
+  <link rel="icon" href="icon.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title-with-icon">
+      ERP Finder
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           width="24" height="24" fill="currentColor" viewBox="0 0 24 24" 
+           aria-hidden="true" class="magnify-icon">
+        <path d="M10 2a8 8 0 105.292 14.292l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+      </svg>
+    </h1>
+
+    <label for="partNameInput">Part Name:</label>
+    <input type="text" id="partNameInput" autocomplete="off" placeholder="Type part name..." />
+
+    <div id="listBoxContainer"></div>
+
+    <div id="selectedERP">
+      <strong>Selected ERP Part No:</strong> <span id="erpNumber"></span>
+    </div>
+  </div>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+
+  <!-- Register service worker for offline support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
